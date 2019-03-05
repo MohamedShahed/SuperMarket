@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Admin extends Person {
@@ -97,7 +98,7 @@ public class Admin extends Person {
 						  +"5) DisplayTotalCustomers\n"
 						  +"6) DisplayMaxReceipt\n\n");
 	}
-	public int choice()
+	public int choice() throws InputMismatchException
 	{
 		input=new Scanner(System.in); 
 		int c; 
