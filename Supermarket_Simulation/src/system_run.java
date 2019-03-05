@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException; 
 import java.util.Scanner; 
 
 public class system_run {
@@ -7,7 +8,7 @@ public class system_run {
 	private Admin admin=new Admin("mohamed", "awseem"); 
 	
 	//===========================================================================
-	private int validate_choice()
+	private int validate_choice()throws InputMismatchException
 	{
 		int choice=input.nextInt(); 
 		while(choice!= 1 && choice !=2 && choice!=0)
@@ -19,7 +20,7 @@ public class system_run {
 	}
 	
 	//===========================================================================
-	private char validate_ch()
+	private char validate_ch() throws InputMismatchException
 	{
 		char ch=input.next().charAt(0);
 		while(ch!= 'Y' && ch!='N')
@@ -32,6 +33,7 @@ public class system_run {
 	//=============================================================================
 	public system_run()
 	{
+		try {
 		System.out.println("\t\tWelcome to Supermarket Simulator Program\n\n\n\n");
 		int choice; 
 		while(true)
@@ -70,6 +72,17 @@ public class system_run {
 	   }
 			
 		}
+		
+	
 	}
+		catch(InputMismatchException e)
+		{
+			System.out.println("Wrong input ");
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
 
+}
 }
